@@ -1,0 +1,6 @@
+<p>login works!</p>
+<form (ngSubmit)="login()" method="POST" #loginForm="ngForm">
+    <input type="email" name="email" [(ngModel)]="credentials.email" id="email" placeholder="email" required>
+    <input type="password" name="password" [(ngModel)]="credentials.password" placeholder="password" required>
+    <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+  </form>
