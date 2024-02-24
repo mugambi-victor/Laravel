@@ -1,0 +1,19 @@
+<section>
+  <header class="header">
+    <h1>Our Product Catalog</h1>
+</header>
+<div class="container">
+  <div style="display: flex; justify-content: space-between;">
+    <h2>Products</h2>
+    
+    <a [routerLink]="['/addproduct']" routerLinkActive="router-link-active" class="button-link">Add product</a>
+  </div>
+  
+      <ul>
+        <li *ngFor="let product of products" (click)="viewProductDetails(product.id)" class="flex">
+          <span class="product-name">{{ product.name }}</span> - <span class="product-price">{{ product.price }}</span>
+        </li>
+      </ul>
+    
+  </div>
+</section>

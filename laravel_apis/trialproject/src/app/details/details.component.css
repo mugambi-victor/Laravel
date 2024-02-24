@@ -1,0 +1,26 @@
+/* product-details.component.css */
+.container {
+    margin-top: 20px;
+  }
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-header {
+    background-color: #f8f9fa;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+  }
+  

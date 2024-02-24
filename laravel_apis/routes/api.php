@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\AuthenticationController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,11 +21,9 @@ Route::middleware('auth:api')->group(function () {
     // Your authenticated routes go here
     Route::post('/logout', 'App\Http\Controllers\AuthenticationController@logout');
     Route::post('/create', 'App\Http\Controllers\ProductController@store');
-    Route::post('/index', 'App\Http\Controllers\ProductController@index');
+    Route::get('/products', 'App\Http\Controllers\ProductController@products');
+    Route::get('/show/{id}', 'App\Http\Controllers\ProductController@show');
 });
-Route::post('/register','App\Http\Controllers\AuthenticationController@register');
-Route::post('/login', 'App\Http\Controllers\AuthenticationController@login');
-
-
-
+Route::post('register', 'App\Http\Controllers\AuthenticationController@register')->name('register');
+Route::post('login', 'App\Http\Controllers\AuthenticationController@login')->name('login');
 

@@ -1,6 +1,8 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+// main.ts
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+//import bootstrap from './bootstrap'; // Assuming bootstrap is your custom startup logic
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));

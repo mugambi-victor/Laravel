@@ -36,11 +36,15 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
         'api' => [
-            \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
+            // \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
+
+            //this line here did magic. allowed the /products route to be inside authenticated routes by api.
+            // what is it?
+            // middleware in Laravel is responsible for substituting route model bindings in the route action parameters. When a route has route model bindings defined and a controller method expecting those bindings as parameters, this middleware automatically resolves the model instances and injects them into the method parameters.
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
 
